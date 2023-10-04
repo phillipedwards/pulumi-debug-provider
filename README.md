@@ -9,8 +9,10 @@
 
 ## Steps
 1. Create a launch configuration (VS Code) to execute the provider binary locally on your machine
+
+  ![image](https://github.com/phillipedwards/pulumi-debug-provider/assets/25461821/6ab382ed-f876-4914-8c49-5f4992b08d6f)
+
 2. Set a breakpoint somewhere within the provider code that will be triggered. In this case, we will set a breakpoint in ./provider/pkg/provider/provider.go
 3. Start the provider binary through your IDE
-4. Once the provider binary fullys starts, it will emit it's process ID in your debug output (terminal)
-. Using the PID from step 3 execute a pulumi up. `PULUMI_DEBUG_PROVIDERS="{provider_name}:{process_id}" pulumi up|pre|etc` replacing {provider_name} with your provider (kubernetes in this case) and {process_id} with the PID from step 3.
-5. Your breakpoint should have been reached and you can now step through the code as you wish!
+4. Once the provider binary fullys starts, it will emit it's process ID in your debug output (terminal). Using the PID from step 3 execute a pulumi up. `PULUMI_DEBUG_PROVIDERS="{provider_name}:{process_id}" pulumi up|pre|etc` replacing {provider_name} with your provider (kubernetes in this case) and {process_id} with the PID from step 3.
+6. Your breakpoint should have been reached and you can now step through the code as you wish!
